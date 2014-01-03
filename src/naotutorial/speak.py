@@ -6,7 +6,9 @@ Created on 03.01.2014
 '''
 
 from naoqi import ALProxy
+
+phaenao = "192.168.1.123"
     
 if __name__ == '__main__':
-    tts = ALProxy("ALTextToSpeech", "192.168.1.123", 9559 )
+    tts = ALProxy("ALTextToSpeech", phaenao, 9559 )
     tts.say("Hallo, ich bin phänao!")
