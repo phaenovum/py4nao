@@ -11,4 +11,7 @@ phaenao = {"name": "phänao", "ip": "192.168.1.123", "port": 9559}
     
 if __name__ == '__main__':
     tts = ALProxy("ALTextToSpeech", phaenao["ip"], phaenao["port"])
+    tts.setLanguage('english')
+    tts.say("Hello, I am %s!" % phaenao["name"])
+    tts.setLanguage('german')
     tts.say("Hallo, ich bin %s!" % phaenao["name"])
