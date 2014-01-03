@@ -7,8 +7,8 @@ Created on 03.01.2014
 
 from naoqi import ALProxy
 
-phaenao = "192.168.1.123"
+phaenao = ["phänao", "192.168.1.123", 9559]
     
 if __name__ == '__main__':
-    tts = ALProxy("ALTextToSpeech", phaenao, 9559 )
-    tts.say("Hallo, ich bin phänao!")
+    tts = ALProxy("ALTextToSpeech", phaenao[2], phaenao[3] )
+    tts.say("Hallo, ich bin" + phaenao[1] + "!")
