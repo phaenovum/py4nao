@@ -15,6 +15,10 @@ tts.setLanguage('german')
 motion = ALProxy("ALMotion", phaenao["ip"], phaenao["port"])
 motion.setStiffnesses("Body", 1.0)
 motion.moveInit()
-motion.post.moveTo(0.5, 0, 0)
+id = motion.post.moveTo(0.5, 0, 0)
+
+tts.say("Ich laufe!")
+
+motion.wait(id, 0)
 
 tts.say("Hallo, ich bin %s!" % phaenao["name"])
