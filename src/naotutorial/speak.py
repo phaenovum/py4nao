@@ -9,9 +9,12 @@ from naoqi import ALProxy
 
 phaenao = {"name": "phänao", "ip": "192.168.1.123", "port": 9559}
     
-if __name__ == '__main__':
-    tts = ALProxy("ALTextToSpeech", phaenao["ip"], phaenao["port"])
-    tts.setLanguage('english')
-    tts.say("Hello, I am %s!" % phaenao["name"])
-    tts.setLanguage('german')
-    tts.say("Hallo, ich bin %s!" % phaenao["name"])
+tts = ALProxy("ALTextToSpeech", phaenao["ip"], phaenao["port"])
+tts.setLanguage('german')
+
+motion = ALProxy("ALMotion", phaenao["ip"], phaenao["port"])
+motion.setStiffnesses("Body", 1.0)
+motion.moveInit()
+motion.post.moveTo(0.5, 0, 0)
+
+tts.say("Hallo, ich bin %s!" % phaenao["name"])
